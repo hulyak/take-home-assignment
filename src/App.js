@@ -4,6 +4,7 @@ import React from "react";
 function App() {
   const lowerCase = "lowercase";
   const upperCase = "uppercase";
+  const unknown = "unknown";
 
   const [textInput, setTextInput] = React.useState(
     "Here is some example text."
@@ -22,10 +23,15 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (conversionMode === lowerCase) {
-      setTextOutput(textInput.toLowerCase());
-    } else if (conversionMode === upperCase) {
-      setTextOutput(textInput.toUpperCase());
+    switch (conversionMode) {
+      case lowerCase:
+        setTextOutput(textInput.toLowerCase());
+        break;
+      case upperCase:
+        setTextOutput(textInput.toUpperCase());
+        break;
+      default:
+        setTextOutput(textInput(unknown));
     }
   };
 
