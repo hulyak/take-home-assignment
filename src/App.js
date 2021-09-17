@@ -2,10 +2,13 @@ import "./App.css";
 import React from "react";
 
 function App() {
+  const lowerCase = "lowercase";
+  const upperCase = "uppercase";
+
   const [textInput, setTextInput] = React.useState(
     "Here is some example text."
   );
-  const [conversionMode, setConversionMode] = React.useState("lowercase");
+  const [conversionMode, setConversionMode] = React.useState(lowerCase);
   const [textOutput, setTextOutput] = React.useState("");
 
   const handleRadioChange = (event) => {
@@ -19,9 +22,9 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (conversionMode === "lowercase") {
+    if (conversionMode === lowerCase) {
       setTextOutput(textInput.toLowerCase());
-    } else if (conversionMode === "uppercase") {
+    } else if (conversionMode === upperCase) {
       setTextOutput(textInput.toUpperCase());
     }
   };
@@ -45,8 +48,8 @@ function App() {
             type="radio"
             name="conversion"
             id="conversion-0"
-            value="lowercase"
-            checked={conversionMode === "lowercase"}
+            value={lowerCase}
+            checked={conversionMode === lowerCase}
             onChange={handleRadioChange}
           />
           <label htmlFor="conversion-0">Convert text to lowercase</label>
@@ -56,8 +59,8 @@ function App() {
             type="radio"
             name="conversion"
             id="conversion-1"
-            value="uppercase"
-            checked={conversionMode === "uppercase"}
+            value={upperCase}
+            checked={conversionMode === upperCase}
             onChange={handleRadioChange}
           />
           <label htmlFor="conversion-1">Convert text to uppercase</label>
