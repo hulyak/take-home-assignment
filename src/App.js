@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 
 function App() {
+  // create constants
   const lowerCase = "lowercase";
   const upperCase = "uppercase";
   const unknown = "unknown";
@@ -55,11 +56,11 @@ function App() {
   //   });
   // }
 
-  const camelize = (str) => {
-    return str
-      .toLowerCase()
-      .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-  };
+  // const camelize = (str) => {
+  //   return str
+  //     .toLowerCase()
+  //     .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+  // };
 
   const handleRadioChange = (event) => {
     setConversionMode(event.target.value);
